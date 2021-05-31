@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col cod-md-6">
+                <h5 class="card-title">
+                    {{ '::Menu:Cars' | abpLocalization }}
+                </h5>
+            </div>
+            <div class="text-right col md-6"></div>
+        </div>
+    </div>
+    <div class="card-body">
+        <ngx-datatable [rows]="car.items" [count]="car.totalCount" [list]="list" default>
+            <ngx-datatable-column [name]="'::Model' | abpLocalization" prop="model"></ngx-datatable-column>
+            <ngx-datatable-column [name]="'::Type' | abpLocalization" prop="type">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ '::Enum:CarType:' + row.type | abpLocalization }}
+                </ng-template>                
+            </ngx-datatable-column>
+            <ngx-datatable-column [name]="'::BuyDate' | abpLocalization " prop="buyDate">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.buyDate | date }}
+                </ng-template>                
+            </ngx-datatable-column>
+            <ngx-datatable-column [name]="'::Price' | abpLocalization" prop="price">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{ row.price | currency }}
+                </ng-template>                
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>
