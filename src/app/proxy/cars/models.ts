@@ -3,14 +3,14 @@ import type { CarType } from './car-type.enum';
 
 export interface CarDTO extends AuditedEntityDto<string> {
   model?: string;
-  carType: CarType;
+  type: CarType;
   buyDate?: string;
   price: number;
 }
 
 export interface CreateUpdateCarDto {
   model: string;
-  carType: CarType;
+  type: CarType;
   buyDate: string;
   price: number;
 }
