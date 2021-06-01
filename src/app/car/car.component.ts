@@ -17,14 +17,11 @@ import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
 })
 export class CarComponent implements OnInit {
   car = { items: [], totalCount: 0 } as PagedResultDto<CarDTO>;
-
   selectedCar = {} as CarDTO;
-
   form: FormGroup;
-
   carTypes = carTypeOptions;
-
   isModalOpen = false;
+  //ALTEREI ISSO NA MAIN
 
   constructor(public readonly list: ListService, 
     private carService: CarService,
@@ -85,4 +82,6 @@ export class CarComponent implements OnInit {
     })
   }
 
+
+  //TESTE confiito MAIN
 }
