@@ -64,7 +64,7 @@ export class CarComponent implements OnInit {
     this.form = this.fb.group({
       model: [this.selectedCar.model || '', Validators.required],
       type: [this.selectedCar.type || null, Validators.required],
-      buyDate: [this.selectedCar.buyDate || null, Validators.required],
+      buyDate: [this.selectedCar.buyDate ? new Date(this.selectedCar.buyDate) : null, Validators.required],
       price: [this.selectedCar.price || null, Validators.required]
     });
   }
