@@ -8,7 +8,7 @@
             </div>
             <div class="text-right col md-6">
                 <div class="text-lg-right pt-2">
-                    <button id="create" class="btn btn-primary" type="button" (click)="createCar()">
+                    <button *abpPermission="'CarStore.Cars.Create'" id="create" class="btn btn-primary" type="button" (click)="createCar()">
                         <i class="fa fa-plus mr-1"></i>
                         <span>{{ "::NewCar" | abpLocalization }}</span>
                     </button>
@@ -30,10 +30,10 @@
                             <i class="fa fa-cog mr-1"></i>{{ '::Actions' | abpLocalization }}
                         </button>
                         <div ngbDropdownMenu>
-                            <button ngbDropdownItem (click)="editCar(row.id)">
+                            <button *abpPermission="'CarStore.Cars.Edit'" ngbDropdownItem (click)="editCar(row.id)">
                                 {{ '::Edit' | abpLocalization }}
                             </button>
-                            <button ngbDropdownItem (click)="delete(row.id)">
+                            <button *abpPermission="'CarStore.Cars.Delete'" ngbDropdownItem (click)="delete(row.id)">
                                 {{ '::Delete' | abpLocalization }}
                             </button>
                         </div>

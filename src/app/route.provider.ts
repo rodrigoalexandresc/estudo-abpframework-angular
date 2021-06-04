@@ -26,7 +26,8 @@ function configureRoutes(routesService: RoutesService) {
         path: '/cars',
         name: '::Menu:Cars',
         parentName: '::Menu:CarStore',
-        layout: eLayoutType.application
+        layout: eLayoutType.application,
+        requiredPolicy: 'CarStore.Cars'
       }
     ]);
   };
