@@ -21,7 +21,10 @@ export class CarComponent implements OnInit {
   form: FormGroup;
   carTypes = carTypeOptions;
   isModalOpen = false;
+
+  //teste
   //ALTEREI ISSO NA MAIN
+  //RESOLVIDO
 
   constructor(public readonly list: ListService, 
     private carService: CarService,
